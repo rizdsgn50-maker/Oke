@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MORI - Japanese Forest Cafe & Sanctuary untuk freelancer, startup, dan profesional modern. Tempat fokus, kopi spesialti, dan ruang aesthetic di tengah nuansa hutan Jepang.">
+    <meta name="keywords" content="kafe aesthetic, japanese forest cafe, co-working space, startup cafe, freelancer space, surabaya cafe">
+    <meta name="author" content="MORI">
+    <title>MORI • Japanese Forest Cafe | Sanctuary for Modern Souls</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --bone: #F8F6F0;
+            --asgard-blue: #3B82F6;
+            --grey: #64748B;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-header {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .premium-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .premium-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .nav-active {
+            color: #3B82F6;
+            position: relative;
+        }
+        
+        .nav-active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #3B82F6, transparent);
+        }
+
+        .forest-bg {
+            background: linear-gradient(rgba(11, 17, 32, 0.65), rgba(11, 17, 32, 0.75)), 
+                        url('https://picsum.photos/id/1016/2000/1200');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .mori-gradient {
+            background: linear-gradient(135deg, #0B1120 0%, #1E2937 100%);
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .portfolio-card {
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .portfolio-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .modal {
+            animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .stagger-1 { animation-delay: 100ms; }
+        .stagger-2 { animation-delay: 200ms; }
+        .stagger-3 { animation-delay: 300ms; }
+        .stagger-4 { animation-delay: 400ms; }
+
+        .micro-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .micro-hover:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .nav-scrolled {
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .testimonial-slide {
+            transition: all 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        .mori-leaf {
+            animation: leafSway 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#0B1120] text-[#F8F6F0] overflow-x-hidden">
+    <!-- LOADING ANIMATION -->
+    <div id="loader" class="fixed inset-0 bg-[#0B1120] z-[999] flex items-center justify-center">
+        <div class="text-center">
+            <div class="flex items-center justify-center gap-x-3 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#1E40AF] flex items-center justify-center">
+                    <i class="fa-solid fa-leaf text-white text-3xl mori-leaf"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-4xl tracking-tighter">MORI</span>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-x-2">
+                <div class="w-2 h-2 bg-[#3B82F6] rounded-full animate-pulse"></div>
+                <div class="w-2 h-2 bg-[#3B82F6] rounded-full animate-pulse" style="animation-delay: 200ms"></div>
+                <div class="w-2 h-2 bg-[#3B82F6] rounded-full animate-pulse" style="animation-delay: 400ms"></div>
+            </div>
+            <p class="text-xs text-[#64748B] mt-3 tracking-[3px]">FINDING YOUR PEACE</p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#1E40AF] flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-leaf text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">MORI</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#home" class="nav-link hover:text-[#3B82F6] transition-colors">Home</a>
+                    <a href="#about" class="nav-link hover:text-[#3B82F6] transition-colors">About</a>
+                    <a href="#services" class="nav-link hover:text-[#3B82F6] transition-colors">Services</a>
+                    <a href="#portfolio" class="nav-link hover:text-[#3B82F6] transition-colors">Spaces</a>
+                    <a href="#contact" class="nav-link hover:text-[#3B82F6] transition-colors">Contact</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-4">
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" 
+                            class="w-10 h-10 flex items-center justify-center rounded-2xl glass hover:bg-white/10 transition-all">
+                        <i class="fa-solid fa-moon text-lg" id="theme-icon"></i>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-6 py-2.5 bg-white text-[#0B1120] font-semibold text-sm rounded-3xl hover:bg-[#F8F6F0] transition-all flex items-center gap-x-2 micro-hover">
+                        <span>Reserve Now</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center glass rounded-2xl">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#0B1120]/95 z-40 pt-20 px-6">
+        <div class="flex flex-col gap-y-6 text-lg font-medium">
+            <a href="#home" class="mobile-link py-3 border-b border-white/10">Home</a>
+            <a href="#about" class="mobile-link py-3 border-b border-white/10">About</a>
+            <a href="#services" class="mobile-link py-3 border-b border-white/10">Services</a>
+            <a href="#portfolio" class="mobile-link py-3 border-b border-white/10">Spaces</a>
+            <a href="#contact" class="mobile-link py-3 border-b border-white/10">Contact</a>
+            
+            <div class="pt-4 flex flex-col gap-y-3">
+                <button onclick="toggleTheme()" class="flex items-center gap-x-3 text-left py-3">
+                    <i class="fa-solid fa-moon w-5"></i> 
+                    <span>Toggle Theme</span>
+                </button>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); closeMobileMenu()" 
+                        class="w-full py-3.5 bg-white text-[#0B1120] font-semibold rounded-3xl">
+                    Reserve Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen flex items-center forest-bg pt-16 relative">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-20">
+            <div class="max-w-4xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full glass mb-6 text-sm">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium tracking-wider text-xs">SURABAYA • EST 2023</span>
+                </div>
+
+                <h1 class="text-7xl md:text-8xl leading-[0.95] font-bold tracking-tighter mb-6">
+                    Find your<br>
+                    <span class="bg-gradient-to-r from-white to-[#F8F6F0] bg-clip-text text-transparent">flow in the forest.</span>
+                </h1>
+                
+                <p class="max-w-lg text-xl text-[#CBD5E1] mb-10">
+                    Japanese forest aesthetic cafe &amp; sanctuary.<br>
+                    Tempat terbaik buat freelancer, startup, dan jiwa-jiwa modern yang butuh ketenangan.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })" 
+                            class="group px-9 py-4 bg-white text-[#0B1120] font-semibold rounded-3xl flex items-center gap-x-3 text-base hover:bg-[#F8F6F0] transition-all micro-hover">
+                        <span>Explore The Spaces</span>
+                        <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition"></i>
+                    </button>
+                    
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 border border-white/30 hover:bg-white/5 font-medium rounded-3xl flex items-center gap-x-3 text-base transition-all">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>Book a Table</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-x-8 mt-14">
+                    <div class="flex -space-x-3">
+                        <img src="https://picsum.photos/id/1005/32/32" class="w-8 h-8 rounded-full border-2 border-[#0B1120] object-cover" alt="">
+                        <img src="https://picsum.photos/id/1011/32/32" class="w-8 h-8 rounded-full border-2 border-[#0B1120] object-cover" alt="">
+                        <img src="https://picsum.photos/id/1009/32/32" class="w-8 h-8 rounded-full border-2 border-[#0B1120] object-cover" alt="">
+                    </div>
+                    <div class="text-sm">
+                        <span class="font-semibold">200+</span> 
+                        <span class="text-[#64748B]">creatives &amp; founders already here</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 hidden md:block">
+            <div class="flex flex-col items-center text-xs tracking-[2px] text-white/60">
+                <span>SCROLL TO BEGIN</span>
+                <i class="fa-solid fa-chevron-down mt-1 animate-bounce"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="max-w-screen-2xl mx-auto px-8 pt-20 pb-16">
+        <div class="grid md:grid-cols-12 gap-x-12 items-center">
+            <!-- Text -->
+            <div class="md:col-span-7">
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#3B82F6] mb-3">OUR STORY</div>
+                <h2 class="section-header leading-none mb-8">We built a forest<br>inside the city.</h2>
+                
+                <div class="max-w-[560px] space-y-6 text-[#CBD5E1]">
+                    <p class="text-lg">MORI lahir dari keinginan sederhana: menciptakan ruang di mana manusia bisa bernapas lagi. Terinspirasi langsung dari filosofi hutan Jepang — tenang, intentional, dan penuh keindahan alami.</p>
+                    
+                    <p>Kami percaya bahwa <span class="font-medium text-white">fokus terbaik</span> lahir ketika kamu dikelilingi ketenangan. Makanya setiap sudut MORI didesain dengan teliti: cahaya lembut, material alami, dan vibe yang bikin kamu betah berlama-lama.</p>
+                </div>
+
+                <div class="flex items-center gap-x-8 mt-9">
+                    <div>
+                        <div class="text-4xl font-semibold tracking-tighter">87</div>
+                        <div class="text-xs text-[#64748B] tracking-wider">FOUNDERS &amp; FREELANCERS</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold tracking-tighter">340</div>
+                        <div class="text-xs text-[#64748B] tracking-wider">CUPS OF PEACE SERVED</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="md:col-span-5 mt-10 md:mt-0">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                    <img src="https://picsum.photos/id/1005/900/700" 
+                         class="w-full h-full object-cover" alt="Interior MORI Cafe dengan desain Japanese forest aesthetic">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="glass px-5 py-3 rounded-2xl inline-block">
+                            <span class="text-sm font-medium">“The most beautiful workspace I’ve ever stepped into.”</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / FEATURES -->
+    <section id="services" class="max-w-screen-2xl mx-auto px-8 py-16 bg-[#0F172A]">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+            <div class="text-[#3B82F6] text-xs tracking-[3px] font-semibold mb-3">THE EXPERIENCE</div>
+            <h2 class="section-header">Everything you need<br>to do your best work.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Service Cards -->
+            <div class="premium-card glass p-8 rounded-3xl group">
+                <div class="w-12 h-12 rounded-2xl bg-[#1E2937] flex items-center justify-center mb-6 group-hover:bg-[#3B82F6]/20 transition-colors">
+                    <i class="fa-solid fa-mug-hot text-3xl text-[#3B82F6]"></i>
+                </div>
+                <h3 class="font-semibold text-2xl mb-3">Artisan Brews</h3>
+                <p class="text-[#94A3B8]">Specialty coffee, ceremonial grade matcha, dan seasonal drinks yang dibuat dengan hati.</p>
+            </div>
+
+            <div class="premium-card glass p-8 rounded-3xl group stagger-1">
+                <div class="w-12 h-12 rounded-2xl bg-[#1E2937] flex items-center justify-center mb-6 group-hover:bg-[#3B82F6]/20 transition-colors">
+                    <i class="fa-solid fa-laptop-house text-3xl text-[#3B82F6]"></i>
+                </div>
+                <h3 class="font-semibold text-2xl mb-3">Co-Working Sanctuaries</h3>
+                <p class="text-[#94A3B8]">Sudut-sudut tenang dengan meja ergonomis, WiFi kencang, dan pemandangan "hutan".</p>
+            </div>
+
+            <div class="premium-card glass p-8 rounded-3xl group stagger-2">
+                <div class="w-12 h-12 rounded-2xl bg-[#1E2937] flex items-center justify-center mb-6 group-hover:bg-[#3B82F6]/20 transition-colors">
+                    <i class="fa-solid fa-users text-3xl text-[#3B82F6]"></i>
+                </div>
+                <h3 class="font-semibold text-2xl mb-3">Private Meeting Pods</h3>
+                <p class="text-[#94A3B8]">Ruang meeting privat untuk startup team atau client call. Tenang &amp; aesthetic.</p>
+            </div>
+
+            <div class="premium-card glass p-8 rounded-3xl group stagger-3">
+                <div class="w-12 h-12 rounded-2xl bg-[#1E2937] flex items-center justify-center mb-6 group-hover:bg-[#3B82F6]/20 transition-colors">
+                    <i class="fa-solid fa-spa text-3xl text-[#3B82F6]"></i>
+                </div>
+                <h3 class="font-semibold text-2xl mb-3">Wellness &amp; Events</h3>
+                <p class="text-[#94A3B8]">Workshop mindfulness, founder talk, dan sesi kreatif rutin setiap bulan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / SPACES -->
+    <section id="portfolio" class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+                <div class="text-[#3B82F6] text-xs tracking-[3px] font-semibold mb-2">THE SPACES</div>
+                <h2 class="section-header">Step inside.<br>Feel the calm.</h2>
+            </div>
+            <p class="text-[#94A3B8] max-w-xs mt-3 md:mt-0">Setiap sudut dirancang untuk bikin kamu betah dan produktif.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Portfolio Items -->
+            <div onclick="showPortfolioModal(0)" class="portfolio-card group cursor-pointer rounded-3xl overflow-hidden relative aspect-[4/3] shadow-xl">
+                <img src="https://picsum.photos/id/1016/600/500" class="w-full h-full object-cover transition-transform duration-700" alt="The Canopy Lounge">
+                <div class="portfolio-overlay absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80 flex items-end p-6 opacity-90 group-hover:opacity-100 transition-all">
+                    <div>
+                        <div class="text-white font-semibold text-xl">The Canopy Lounge</div>
+                        <div class="text-white/70 text-sm">Main area • 28 seats</div>
+                    </div>
+                </div>
+            </div>
+
+            <div onclick="showPortfolioModal(1)" class="portfolio-card group cursor-pointer rounded-3xl overflow-hidden relative aspect-[4/3] shadow-xl">
+                <img src="https://picsum.photos/id/133/600/500" class="w-full h-full object-cover transition-transform duration-700" alt="Moss Garden Terrace">
+                <div class="portfolio-overlay absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80 flex items-end p-6 opacity-90 group-hover:opacity-100 transition-all
