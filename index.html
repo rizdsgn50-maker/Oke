@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riz.Ubaidillah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    /* ========== DARK MODE FIX PALING KUAT ========== */
+
+.dark body,
+.dark .glass,
+.dark p,
+.dark div,
+.dark span {
+    color: #f4f1e9 !important;
+}
+
+/* Nama "Riz.Ubaidillah" di Top Nav */
+.dark .font-black.tracking-tighter {
+    color: #f4f1e9 !important;
+}
+
+/* Semua font hitam */
+.dark .font-black {
+    color: #f4f1e9 !important;
+}
+
+/* Icon */
+.dark i,
+.dark .lucide {
+    color: #c5a46e !important;
+}
+
+/* Filter Button */
+.dark .filter-btn {
+    background-color: #1f4a3a !important;
+    color: #f4f1e9 !important;
+    border-color: #3a6b52 !important;
+}
+
+.dark .filter-btn.active {
+    background-color: #c5a46e !important;
+    color: #0d2818 !important;
+}
+
+/* Text kecil */
+.dark .text-xs,
+.dark .text-sm,
+.dark .text-[#8b5e3c] {
+    color: #c5a46e !important;
+}
+    /* ========== DARK MODE FIX FINAL (UNTUK FILE LO) ========== */
+
+/* Nama "Riz.Ubaidillah" di Top Nav */
+.dark div.font-black.tracking-tighter {
+    color: #f4f1e9 !important;
+}
+
+/* Semua heading & nama besar */
+.dark .font-black {
+    color: #f4f1e9 !important;
+}
+
+/* Filter button */
+.dark .filter-btn {
+    background-color: #1f4a3a !important;
+    color: #f4f1e9 !important;
+    border-color: #3a6b52 !important;
+}
+.dark .filter-btn.active {
+    background-color: #c5a46e !important;
+    color: #0d2818 !important;
+}
+
+/* Semua icon */
+.dark i, .dark .lucide {
+    color: #c5a46e !important;
+}
+
+/* Text kecil & deskripsi */
+.dark .text-xs,
+.dark .text-sm,
+.dark .text-[#8b5e3c] {
+    color: #c5a46e !important;
+}
+
+/* Semua text yang gelap */
+.dark .text-[#1f4a3a],
+.dark .text-zinc-500,
+.dark .text-zinc-600 {
+    color: #c5a46e !important;
+}
+    /* === DARK MODE FIX FINAL === */
+
+/* Logo Top Bar */
+.dark .font-black {
+    color: #f4f1e9 !important;
+}
+
+/* Filter Buttons */
+.dark .filter-btn {
+    background-color: #1f4a3a;
+    color: #f4f1e9;
+    border-color: #3a6b52;
+}
+
+.dark .filter-btn.active {
+    background-color: #c5a46e;
+    color: #0d2818;
+    border-color: #c5a46e;
+}
+
+/* Text yang susah dibaca di dark mode */
+.dark .text-xs,
+.dark .text-sm,
+.dark .text-[#8b5e3c] {
+    color: #c5a46e !important;
+}
+
+/* "LIHAT SEMUA →" */
+.dark .text-xs.text-\[\#1f4a3a\] {
+    color: #c5a46e !important;
+}
+
+/* Project card title */
+.dark .font-black {
+    color: #f4f1e9;
+}
+    /* Dark Mode Fix - Icon & Text */
+.dark i,
+.dark .lucide {
+    color: #c5a46e !important;
+}
+
+.dark .text-[#1f4a3a],
+.dark .text-zinc-500,
+.dark .text-zinc-600 {
+    color: #c5a46e !important;
+}
+
+/* Logo & Heading di dark mode */
+.dark .font-black {
+    color: #f4f1e9;
+}
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --forest-deep: #0d2818;
+            --forest-green: #1f4a3a;
+            --moss: #3a6b52;
+            --wood: #8b5e3c;
+            --cream: #f4f1e9;
+            --accent-gold: #c5a46e;
+        }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; 
+        }
+        
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -1px; }
+
+        .glass { 
+            background: rgba(244, 241, 233, 0.92); 
+            backdrop-filter: blur(24px); 
+            border: 1px solid rgba(139, 94, 60, 0.15);
+        }
+        .dark .glass { 
+            background: rgba(13, 40, 24, 0.92); 
+            border: 1px solid rgba(58, 107, 82, 0.3);
+        }
+        
+        .section-title { 
+            font-size: .65rem; 
+            font-weight: 900; 
+            letter-spacing: 3.5px; 
+            text-transform: uppercase; 
+            color: #1f4a3a; 
+        }
+        .dark .section-title { color: #c5a46e; }
+        
+        .skill-card, .project-card, .mini-card { 
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+        }
+        
+        .nav-item.active { 
+            color: #1f4a3a; 
+            background: rgba(31, 74, 58, 0.12); 
+            border-radius: 9999px; 
+        }
+        .dark .nav-item.active { color: #c5a46e; background: rgba(197, 164, 110, 0.15); }
+        
+        .forest-gradient { background: linear-gradient(135deg, #1f4a3a 0%, #3a6b52 100%); }
+        
+        .premium-text {
+            background: linear-gradient(90deg, #1f4a3a, #3a6b52);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .dark .premium-text {
+            background: linear-gradient(90deg, #c5a46e, #f4f1e9);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* KING Dark Mode Readability Upgrade */
+        .dark body,
+        .dark .glass,
+        .dark .section-title,
+        .dark p,
+        .dark div,
+        .dark span {
+            color: #f4f1e9;
+        }
+        
+        .dark .text-zinc-500,
+        .dark .text-zinc-600,
+        .dark .text-[#3a4a3a],
+        .dark .text-[#8b5e3c] {
+            color: #c5a46e !important;
+        }
+        
+        .dark .text-[#1c2521] {
+            color: #f4f1e9 !important;
+        }
+
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(to right, #1f4a3a, #c5a46e);
+            z-index: 9999; transition: width 0.1s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #1f4a3a; color: white; border-color: #1f4a3a;
+        }
+        .dark .filter-btn.active {
+            background-color: #c5a46e; color: #0d2818; border-color: #c5a46e;
+        }
+
+        .leaf-particle {
+            position: absolute;
+            font-size: 14px;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 1;
+            animation: leafFall linear forwards;
+        }
+
+        @keyframes leafFall {
+            to { transform: translateY(120vh) rotate(360deg); }
+        }
+
+        .achievement-badge {
+            transition: all 0.3s ease;
+        }
+        .achievement-badge.unlocked {
+            filter: none;
+            transform: scale(1.05);
+        }
+        .achievement-badge.locked {
+            filter: grayscale(0.8) brightness(0.7);
+        }
+
+        .tilt-card { transition: transform 0.1s ease; }
+
+        .chat-bubble {
+            max-width: 75%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            margin: 6px 0;
+        }
+    </style>
+</head>
+<body class="bg-[#f4f1e9] dark:bg-[#0d2818] text-[#1c2521] dark:text-[#f4f1e9]">
+
+    <!-- Scroll Progress -->
+    <div id="scrollProgress" class="scroll-progress w-0"></div>
+
+    <!-- Top Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-[#f4f1e9]/95 dark:bg-[#0d2818]/95 backdrop-blur-2xl border-b border-[#8b5e3c]/20">
+        <div class="max-w-[460px] mx-auto px-5 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 rounded-2xl forest-gradient flex items-center justify-center shadow-lg relative">
+                    <span class="text-white font-black text-xl tracking-tighter">R</span>
+                    <div class="absolute -top-0.5 -right-0.5 text-[10px]">🌲</div>
+                </div>
+                <div>
+                    <div class="font-black tracking-tighter text-2xl">Namanya juga Rizky</div>
+                    <div class="text-[9px] text-[#8b5e3c] dark:text-[#c5a46e] -mt-1">Sleep • Eat • Work • Repeat</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-x-2">
+                <button onclick="downloadCV()" class="hidden sm:flex items-center gap-x-2 px-4 py-1.5 text-xs font-bold rounded-2xl border border-[#8b5e3c]/30 hover:bg-white dark:hover:bg-[#1f4a3a] active:scale-95">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>CV PDF</span>
+                </button>
+                
+                <button onclick="showKeyboardHelp()" class="w-9 h-9 flex items-center justify-center rounded-2xl border border-[#8b5e3c]/30 hover:bg-white dark:hover:bg-[#1f4a3a]">
+                    <i data-lucide="keyboard" class="w-4 h-4"></i>
+                </button>
+                
+                <button onclick="toggleSettingsMenu()" class="w-10 h-10 flex items-center justify-center rounded-2xl border border-[#8b5e3c]/30 hover:bg-white dark:hover:bg-[#1f4a3a]">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Old nav panel hidden (we use floating 🌲 + settings menu now) -->
+        <div id="navPanel" class="nav-panel max-w-[460px] mx-auto border-t border-[#8b5e3c]/10 bg-[#f4f1e9]/95 dark:bg-[#0d2818]/95 hidden">
+        </div>
+    </div>
+
+    <!-- Main Swiper -->
+    <div class="swiper swiper-main pt-14 pb-8">
+        <div class="swiper-wrapper">
+
+            <!-- HOME ULTIMATE -->
+            <div class="swiper-slide">
+                <div class="max-w-[460px] mx-auto px-5 pt-3">
+                    
+                    <!-- Hero with Particles -->
+                    <div class="glass border border-[#8b5e3c]/20 rounded-[2.75rem] p-8 text-center shadow-xl mb-7 relative overflow-hidden" id="heroSection">
+                        <canvas id="leafCanvas" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:1; opacity:0.35"></canvas>
+                        
+                        <div class="relative z-10">
+                            <div class="relative inline-block mb-6">
+                                <div class="w-[138px] h-[138px] rounded-full p-1.5 forest-gradient">
+                                    <img src="https://github.com/rizdsgn50-maker.png" class="w-full h-full rounded-full object-cover border-[5px] border-[#f4f1e9] dark:border-[#0d2818]" onerror="this.src='https://picsum.photos/id/1005/200/200'">
+                                </div>
+                                <div class="absolute -bottom-1 -right-1 bg-emerald-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full flex items-center gap-x-1.5 shadow-lg">
+                                    <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div> 
+                                    Online
+                                </div>
+                            </div>
+                            
+                            <h1 class="text-[42px] leading-none font-black tracking-[-2.5px] mb-1 heading-serif" id="nameText"></h1>
+                            <p class="text-[#8b5e3c] dark:text-[#c5a46e] text-lg">Human Eror</p>
+                            
+                            <div class="mt-4 text-left text-[15px] text-[#3a4a3a] dark:text-[#d4d4c8] leading-relaxed">
+                                Selesaikan hari ini dengan ikhlas, jangan menyesali hari kemarin apalagi meragukan hari esok. #SEPAKAT
+                            </div>
+
+                            <!-- Live Status -->
+                            <div class="mt-4 inline-flex items-center gap-x-2 px-4 py-1.5 bg-white/70 dark:bg-[#1f4a3a]/70 rounded-2xl text-xs">
+                                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                                <span class="font-medium">Last active: <span id="liveTime"></span> WIB </span>
+                            </div>
+                            
+                            <!-- Animated Stats -->
+                            <div class="grid grid-cols-3 gap-3 mt-6">
+                                <div class="bg-white/80 dark:bg-[#1f4a3a] rounded-2xl py-3 border border-[#8b5e3c]/10">
+                                    <div class="text-2xl font-black text-[#1f4a3a] dark:text-[#c5a46e] stat-number" data-target="3">0</div>
+                                    <div class="text-xs text-[#8b5e3c]">Pengalaman Industri</div>
+                                </div>
+                                <div class="bg-white/80 dark:bg-[#1f4a3a] rounded-2xl py-3 border border-[#8b5e3c]/10">
+                                    <div class="text-2xl font-black text-[#1f4a3a] dark:text-[#c5a46e] stat-number" data-target="12">0</div>
+                                    <div class="text-xs text-[#8b5e3c]">Project</div>
+                                </div>
+                                <div class="bg-white/80 dark:bg-[#1f4a3a] rounded-2xl py-3 border border-[#8b5e3c]/10">
+                                    <div class="text-2xl font-black text-[#1f4a3a] dark:text-[#c5a46e] stat-number" data-target="10">0</div>
+                                    <div class="text-xs text-[#8b5e3c]">Advanture</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="mb-7">
+                        <div class="section-title mb-3 px-1">Pengalaman Industri</div>
+                        <div class="space-y-3">
+                            <div class="glass border border-[#8b5e3c]/20 rounded-3xl p-5 mini-card">
+                                <div class="font-bold text-lg">PT. Layo Seng Fong</div>
+                                <div class="text-xs text-[#8b5e3c]">Assembly Operator • Okt 2024 — Sekarang</div>
+                                <div class="text-sm mt-2 text-[#3a4a3a] dark:text-[#d4d4c8]">Selesaikan lalu pulang.</div>
+                            </div>
+                            <div class="glass border border-[#8b5e3c]/20 rounded-3xl p-5 mini-card">
+                                <div class="font-bold text-lg">CV. Mega Lestari Plasindo</div>
+                                <div class="text-xs text-[#8b5e3c]">Production Operator • Apr — Sep 2024</div>
+                                <div class="text-sm mt-2 text-[#3a4a3a] dark:text-[#d4d4c8]">Berangkat- Tidur - Pulang.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openHireModal()" class="w-full py-4 rounded-3xl font-black text-xl tracking-[1px] forest-gradient text-white flex items-center justify-center gap-x-3 active:scale-[0.985] shadow-xl">
+                        <span>LET'S COLLABORATE</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- SKILLS ULTIMATE -->
+            <div class="swiper-slide">
+                <div class="max-w-[460px] mx-auto px-5 pt-4">
+                    <div class="section-title mb-4 px-1 flex justify-between items-center">
+                        <span>Skill Aktif</span>
+                        <button onclick="showSkillChart()" class="text-xs px-3 py-1 rounded-full border border-[#8b5e3c]/40 text-[#1f4a3a] dark:text-[#c5a46e]">Grafik</button>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mb-8">
+                        <div onclick="showSkillModal('MS Office', 92, 'Expert level. Laporan, presentasi, data tracking — semuanya rapi.')" class="skill-card glass border border-[#8b5e3c]/20 rounded-3xl p-5 cursor-pointer tilt-card">
+                            <div class="flex items-center gap-x-3 mb-4"><i data-lucide="monitor" class="w-6 h-6 text-[#1f4a3a]"></i><div class="font-bold">MS Office</div></div>
+                            <div class="h-2.5 bg-[#d4d4c8] dark:bg-[#1f4a3a] rounded-full overflow-hidden"><div class="h-2.5 bg-[#1f4a3a] dark:bg-[#c5a46e] rounded-full" style="width:92%"></div></div>
+                            <div class="text-right text-xs mt-1 text-[#8b5e3c]">92%</div>
+                        </div>
+                        
+                        <div onclick="showSkillModal('Video Editing', 87, 'Cinematic editing Premiere Pro + CapCut + DaVinci. Color grading.')" class="skill-card glass border border-[#8b5e3c]/20 rounded-3xl p-5 cursor-pointer tilt-card">
+                            <div class="flex items-center gap-x-3 mb-4"><i data-lucide="video" class="w-6 h-6 text-[#1f4a3a]"></i><div class="font-bold">Video Editing</div></div>
+                            <div class="h-2.5 bg-[#d4d4c8] dark:bg-[#1f4a3a] rounded-full overflow-hidden"><div class="h-2.5 bg-[#1f4a3a] dark:bg-[#c5a46e] rounded-full" style="width:87%"></div></div>
+                            <div class="text-right text-xs mt-1 text-[#8b5e3c]">87%</div>
+                        </div>
+                        
+                        <div onclick="showSkillModal('Trouble', 83, 'Diam • Tolah-Toleh • Salah kabeh')" class="skill-card glass border border-[#8b5e3c]/20 rounded-3xl p-5 cursor-pointer tilt-card">
+                            <div class="flex items-center gap-x-3 mb-4"><i data-lucide="settings" class="w-6 h-6 text-[#1f4a3a]"></i><div class="font-bold">Trouble</div></div>
+                            <div class="h-2.5 bg-[#d4d4c8] dark:bg-[#1f4a3a] rounded-full overflow-hidden"><div class="h-2.5 bg-[#1f4a3a] dark:bg-[#c5a46e] rounded-full" style="width:83%"></div></div>
+                            <div class="text-right text-xs mt-1 text-[#8b5e3c]">83%</div>
+                        </div>
+                        
+                        <div onclick="showSkillModal('Input Data', 70, 'Sat-set', 'Kliru kabeh.')" class="skill-card glass border border-[#8b5e3c]/20 rounded-3xl p-5 cursor-pointer tilt-card">
+                            <div class="flex items-center gap-x-3 mb-4"><i data-lucide="database" class="w-6 h-6 text-[#1f4a3a]"></i><div class="font-bold">Input Data</div></div>
+                            <div class="h-2.5 bg-[#d4d4c8] dark:bg-[#1f4a3a] rounded-full overflow-hidden"><div class="h-2.5 bg-[#1f4a3a] dark:bg-[#c5a46e] rounded-full" style="width:70%"></div></div>
+                            <div class="text-right text-xs mt-1 text-[#8b5e3c]">70%</div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div class="section-title mb-3 px-1">Skill Pasif</div>
+                    <div class="grid grid-cols-4 gap-2 mb-8">
+                        <div onclick="unlockAchievement(this, 'first-project')" class="achievement-badge locked glass border border-[#8b5e3c]/20 rounded-2xl p-3 text-center cursor-pointer" data-id="first-project">
+                            <div class="text-2xl mb-1">🎬</div>
+                            <div class="text-[10px] font-bold">Video Editing</div>
+                        </div>
+                        <div onclick="unlockAchievement(this, 'touring')" class="achievement-badge locked glass border border-[#8b5e3c]/20 rounded-2xl p-3 text-center cursor-pointer" data-id="touring">
+                            <div class="text-2xl mb-1">🏍️</div>
+                            <div class="text-[10px] font-bold">Touring </div>
+                        </div>
+                        <div onclick="unlockAchievement(this, 'mekanik')" class="achievement-badge locked glass border border-[#8b5e3c]/20 rounded-2xl p-3 text-center cursor-pointer" data-id="mekanik">
+                            <div class="text-2xl mb-1">🔧</div>
+                            <div class="text-[10px] font-bold">Mekanik Tiktok</div>
+                        </div>
+                        <div onclick="unlockAchievement(this, 'desain')" class="achievement-badge locked glass border border-[#8b5e3c]/20 rounded-2xl p-3 text-center cursor-pointer" data-id="desain">
+                            <div class="text-2xl mb-1">✒️/div>
+                            <div class="text-[10px] font-bold">Desain visual</div>
+                        </div>
+                    </div>
+
+                    <div class="section-title mb-4 px-1">Hobi</div>
+                    <div class="space-y-3">
+                        <div onclick="showInterestModal('Touring & Adventure', 'akan selalu ada cerita disetiap kilometer nya, nanti kita cerita kalau sempat.')" class="glass border border-[#8b5e3c]/20 rounded-3xl p-5 cursor-pointer mini-card">
+                            <div class="flex gap-x-4"><div class="w-11 h-11 rounded-2xl bg-[#1f4a3a]/10 flex items-center justify-center"><i data-lucide="bike" class="w-6 h-6 text-[#1f4a3a]"></i></div><div><div class="font-bold">Touring &amp; Adventure</div><div class="text-xs text-[#8b5e3c]">mari temukan tempat yang tenang itu</div></div></div>
+                        </div>
+                        <div onclick="showInterestModal('videography')" class="glass border border-[#8b5e3c]/20 rounded-3xl p-5 cursor-pointer mini-card">
+                            <div class="flex gap-x-4"><div class="w-11 h-11 rounded-2xl bg-[#1f4a3a]/10 flex items-center justify-center"><i data-lucide="camera" class="w-6 h-6 text-[#1f4a3a]"></i></div><div><div class="font-bold">Videography</div><div class="text-xs text-[#8b5e3c]">Cinematic, Short film, Advanture</div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS ULTIMATE -->
+            <div class="swiper-slide">
+                <div class="max-w-[460px] mx-auto px-5 pt-4">
+                    <div class="flex justify-between mb-3 px-1">
+                        <div class="section-title">Show my project</div>
+                        <button onclick="showAllProjectsModal()" class="text-xs text-[#1f4a3a] dark:text-[#c5a46e]">LIHAT SEMUA →</button>
+                    </div>
+                    
+                    <!-- Filter -->
+                    <div class="mb-3 flex gap-2 overflow-x-auto">
+                        <button onclick="filterProjects('all')" class="filter-btn active px-4 py-1 text-xs font-bold rounded-2xl border border-[#8b5e3c]/30">ALL</button>
+                        <button onclick="filterProjects('VIDEO')" class="filter-btn px-4 py-1 text-xs font-bold rounded-2xl border border-[#8b5e3c]/30">VIDEO</button>
+                        <button onclick="filterProjects('BRAND')" class="filter-btn px-4 py-1 text-xs font-bold rounded-2xl border border-[#8b5e3c]/30">STORE</button>
+                        <button onclick="filterProjects('TRIP')" class="filter-btn px-4 py-1 text-xs font-bold rounded-2xl border border-[#8b5e3c]/30">TRIP</button>
+                    </div>
+                    
+                    <input id="projectSearch" onkeyup="filterProjects()" placeholder="Cari project..." class="w-full mb-4 px-4 py-2.5 text-sm rounded-2xl border border-[#8b5e3c]/30 bg-white dark:bg-[#1f4a3a]">
+                    
+                    <div id="projectsContainer" class="space-y-4">
+                        <!-- Projects populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- STORE -->
+            <div class="swiper-slide">
+                <div class="max-w-[460px] mx-auto px-5 pt-4">
+                    <div class="section-title mb-4 px-1">OFFICIAL STORE</div>
+                    <div class="glass border border-[#8b5e3c]/20 rounded-[2.5rem] p-8 text-center mb-6">
+                        <div class="mx-auto w-16 h-16 rounded-2xl forest-gradient flex items-center justify-center mb-5"><i data-lucide="shopping-bag" class="w-8 h-8 text-white"></i></div>
+                        <div class="font-black text-4xl tracking-tighter">LLorenzio.id</div>
+                        <p class="text-sm text-[#8b5e3c] mt-1">"Inner Sovereignty"</p>
+                        <a href="https://llorenziostore.vercel.app/" target="_blank" class="mt-6 block py-4 forest-gradient text-white font-black rounded-3xl">VISIT STORE →</a>
+                    </div>
+                    
+                    <div onclick="openPortal()" class="glass border border-[#8b5e3c]/20 rounded-[2.5rem] p-7 text-center cursor-pointer mini-card">
+                        <i data-lucide="sparkles" class="w-8 h-8 mx-auto mb-4 text-[#1f4a3a]"></i>
+                        <div class="font-bold">"Lebih baik gagal saat mencoba<br>daripada menyesal tidak melakukan apa-apa."</div>
+                        <div class="text-xs text-[#8b5e3c] mt-3">— #SEPAKAT</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOURING ULTIMATE -->
+            <div class="swiper-slide">
+                <div class="max-w-[460px] mx-auto px-5 pt-4">
+                    <div class="section-title mb-4 px-1 flex justify-between">
+                        <span>TOURING </span>
+                        <span class="text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 px-3 py-0.5 rounded-full font-bold">TRIP</span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div onclick="openMapModal('Bali')" class="glass border border-[#8b5e3c]/20 rounded-3xl overflow-hidden cursor-pointer mini-card">
+                            <div class="h-40 relative"><img src="https://picsum.photos/id/1005/800/600" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60"></div>
+                            <div class="absolute bottom-4 left-5 text-white"><div class="font-black text-3xl">BALI</div><div class="text-xs">±420 km • 8–10 jam</div></div></div>
+                            <div class="px-5 py-4 flex justify-between text-sm"><div>Jombang → Denpasar</div><i data-lucide="arrow-right"></i></div>
+                        </div>
+                        
+                        <div onclick="openMapModal('Bromo')" class="glass border border-[#8b5e3c]/20 rounded-3xl overflow-hidden cursor-pointer mini-card">
+                            <div class="h-40 relative"><img src="https://picsum.photos/id/251/800/600" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60"></div>
+                            <div class="absolute bottom-4 left-5 text-white"><div class="font-black text-3xl">TENGGER </div><div class="text-xs">±180 km • 5–7 jam</div></div></div>
+                            <div class="px-5 py-4 flex justify-between text-sm"><div>Jombang → Sunrise Point</div><i data-lucide="arrow-right"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Touring Planner -->
+                    <div class="glass border border-[#8b5e3c]/20 rounded-3xl p-5 mb-6">
+                        <div class="font-bold mb-3 flex items-center gap-x-2"><i data-lucide="calculator"></i> <span>WHERE NEXT?</span></div>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-sm mb-3">
+                            <div><label class="text-xs">Destinasi</label>
+                                <select id="plannerDest" class="w-full px-3 py-2 rounded-xl border border-[#8b5e3c]/30 bg-white dark:bg-[#1f4a3a]">
+                                    <option value="Bali">Bali (8-10 jam)</option>
+                                    <option value="Bromo">Bromo (5-7 jam)</option>
+                                </select>
+                            </div>
+                            <div><label class="text-xs">Jumlah Orang</label>
+                                <input id="plannerPeople" type="number" value="2" class="w-full px-3 py-2 rounded-xl border border-[#8b5e3c]/30 bg-white dark:bg-[#1f4a3a]">
+                            </div>
+                        </div>
+                        
+                        <button onclick="calculateTourCost()" class="w-full py-2.5 text-sm font-bold rounded-2xl border border-[#1f4a3a] dark:border-[#c5a46e] hover:bg-[#1f4a3a] hover:text-white">PERKIRAAN BIAYA &amp; WAKTU TEMPUH</button>
+                        <div id="tourResult" class="mt-3 text-center text-sm hidden"></div>
+                    </div>
+
+                    <button onclick="showToast('DM IG @rizdsgn50 buat custom route!')" class="w-full py-3 text-sm font-bold rounded-2xl border border-[#8b5e3c]/40">ESTIMASI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals (Skill, Interest, Map, Hire, etc) -->
+    <!-- Skill Modal -->
+    <div id="skillModal" onclick="closeSkillModal()" class="hidden fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-5">
+        <div onclick="event.stopImmediatePropagation()" class="glass w-full max-w-[380px] rounded-3xl p-7 border border-[#8b5e3c]/20">
+            <div class="flex justify-between mb-5"><div id="skillModalTitle" class="font-black text-3xl"></div><button onclick="closeSkillModal()"><i data-lucide="x"></i></button></div>
+            <div id="skillModalLevel" class="mb-5"></div>
+            <div id="skillModalDesc" class="text-[#3a4a3a] dark:text-[#d4d4c8]"></div>
+            <button onclick="closeSkillModal()" class="mt-7 w-full py-3.5 forest-gradient text-white font-bold rounded-3xl">SEPAKAT!</button>
+        </div>
+    </div>
+
+    <!-- Hire Modal -->
+    <div id="hireModal" onclick="closeHireModal()" class="hidden fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-5">
+        <div onclick="event.stopImmediatePropagation()" class="glass w-full max-w-[400px] rounded-3xl p-8">
+            <div class="text-center mb-6">
+                <div class="mx-auto w-14 h-14 rounded-2xl forest-gradient flex items-center justify-center mb-4"><i data-lucide="send" class="text-white w-7 h-7"></i></div>
+                <div class="font-black text-3xl">Kirim Yapping</div>
+            </div>
+            <input id="hireName" placeholder="Nama" class="w-full mb-3 px-5 py-3 rounded-2xl border border-[#8b5e3c]/30">
+            <input id="hireEmail" type="email" placeholder="Email" class="w-full mb-3 px-5 py-3 rounded-2xl border border-[#8b5e3c]/30">
+            <textarea id="hireMessage" rows="3" placeholder="Ceritain project..." class="w-full mb-4 px-5 py-3 rounded-2xl border border-[#8b5e3c]/30"></textarea>
+            <div class="flex gap-3">
+                <button onclick="closeHireModal()" class="flex-1 py-3 border rounded-2xl">BATAL</button>
+                <button onclick="submitHire()" class="flex-1 py-3 forest-gradient text-white font-black rounded-2xl">KIRIM</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0d2818] text-white px-6 py-3.5 rounded-3xl text-sm font-bold z-[999]"></div>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let mainSwiper;
+        let currentFilter = 'all';
+        let chartInstance = null;
+
+        function initSwiper() {
+            mainSwiper = new Swiper(".swiper-main", {
+                speed: 520,
+                mousewheel: true,
+                on: { slideChange: () => { updateActiveNav(); closeNavPanel(); } }
+            });
+        }
+
+        function updateActiveNav() {
+            document.querySelectorAll(".nav-item").forEach((el, i) => el.classList.toggle("active", i === mainSwiper.activeIndex));
+        }
+
+        function goToSlide(i) { mainSwiper.slideTo(i); closeNavPanel(); }
+
+        // === FLOATING NAV (🌲 Xiaomi Toolbox Style) + Draggable ===
+        let floatingNavOpen = false;
+        let isDragging = false;
+        let longPressTimer = null;
+
+        function toggleFloatingNav() {
+            const fab = document.getElementById('fabNav');
+            const menu = document.getElementById('floatingNavMenu');
+            floatingNavOpen = !floatingNavOpen;
+            
+            if (floatingNavOpen && fab) {
+                // Smart positioning: menu follows the button + flips side if needed
+                const fabRect = fab.getBoundingClientRect();
+                
+                menu.style.top = `${fabRect.top}px`;
+                
+                // If button is on LEFT half → menu appears on RIGHT
+                if (fabRect.left < window.innerWidth / 2) {
+                    menu.style.left = `${fabRect.right + 12}px`;
+                    menu.style.right = 'auto';
+                } 
+                // If button is on RIGHT half → menu appears on LEFT
+                else {
+                    menu.style.left = 'auto';
+                    menu.style.right = `${window.innerWidth - fabRect.left + 12}px`;
+                }
+                
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+            } else {
+                menu.classList.remove('flex');
+                menu.classList.add('hidden');
+            }
+        }
+
+        // Settings Menu from Strip 3 button (includes theme toggle)
+        function toggleSettingsMenu() {
+            const existing = document.getElementById('settingsPopup');
+            if (existing) {
+                existing.remove();
+                return;
+            }
+            
+            const popup = document.createElement('div');
+            popup.id = 'settingsPopup';
+            popup.className = 'fixed top-16 right-4 z-[999] glass border border-[#8b5e3c]/20 rounded-3xl p-4 shadow-2xl w-[200px]';
+            popup.innerHTML = `
+                <div class="flex justify-between items-center mb-3">
+                    <div class="font-bold">Settings</div>
+                    <button onclick="this.closest('#settingsPopup').remove()"><i data-lucide="x" class="w-5 h-5"></i></button>
+                </div>
+                
+                <div onclick="toggleTheme(); document.getElementById('settingsPopup').remove();" class="flex items-center gap-x-3 px-3 py-3 rounded-2xl hover:bg-[#1f4a3a]/10 cursor-pointer">
+                    <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                    <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    <span class="font-medium">Swap Theme (Dark/Light)</span>
+                </div>
+            `;
+            document.body.appendChild(popup);
+            lucide.createIcons();
+        }
+
+        function goToSlideFromFloating(i) {
+            mainSwiper.slideTo(i);
+            
+            // Auto hide floating menu setelah pindah menu
+            const menu = document.getElementById('floatingNavMenu');
+            menu.classList.remove('flex');
+            menu.classList.add('hidden');
+            floatingNavOpen = false;
+        }
+
+        // Draggable Floating Button (long press to drag)
+        function makeFloatingButtonDraggable() {
+            const fab = document.getElementById('fabNav'); // We need to add id to the button
+            if (!fab) return;
+
+            let startX, startY, initialX, initialY;
+
+            const startDrag = (e) => {
+                if (longPressTimer) clearTimeout(longPressTimer);
+                
+                longPressTimer = setTimeout(() => {
+                    isDragging = true;
+                    fab.style.transition = 'none';
+                    fab.style.zIndex = '1000';
+                    
+                    const moveHandler = (moveEvent) => {
+                        if (!isDragging) return;
+                        const clientX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
+                        const clientY = moveEvent.touches ? moveEvent.touches[0].clientY : moveEvent.clientY;
+                        
+                        let newLeft = clientX - startX;
+                        let newTop = clientY - startY;
+                        
+                        // Keep inside screen
+                        newLeft = Math.max(10, Math.min(window.innerWidth - 70, newLeft));
+                        newTop = Math.max(60, Math.min(window.innerHeight - 70, newTop));
+                        
+                        fab.style.left = `${newLeft}px`;
+                        fab.style.top = `${newTop}px`;
+                        fab.style.right = 'auto';
+                    };
+                    
+                    const endDrag = () => {
+                        isDragging = false;
+                        fab.style.transition = 'all 0.2s ease';
+                        document.removeEventListener('mousemove', moveHandler);
+                        document.removeEventListener('mouseup', endDrag);
+                        document.removeEventListener('touchmove', moveHandler);
+                        document.removeEventListener('touchend', endDrag);
+                        
+                        // Save position
+                        localStorage.setItem('fabPosition', JSON.stringify({
+                            left: fab.style.left,
+                            top: fab.style.top
+                        }));
+                    };
+                    
+                    document.addEventListener('mousemove', moveHandler);
+                    document.addEventListener('mouseup', endDrag);
+                    document.addEventListener('touchmove', moveHandler, { passive: false });
+                    document.addEventListener('touchend', endDrag);
+                }, 650); // Long press ~650ms
+            };
+
+            const cancelLongPress = () => {
+                if (longPressTimer) {
+                    clearTimeout(longPressTimer);
+                    longPressTimer = null;
+                }
+            };
+
+            // Mouse
+            fab.addEventListener('mousedown', (e) => {
+                startX = e.clientX - fab.getBoundingClientRect().left;
+                startY = e.clientY - fab.getBoundingClientRect().top;
+                startDrag(e);
+            });
+            fab.addEventListener('mouseup', cancelLongPress);
+            fab.addEventListener('mouseleave', cancelLongPress);
+
+            // Touch
+            fab.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX - fab.getBoundingClientRect().left;
+                startY = e.touches[0].clientY - fab.getBoundingClientRect().top;
+                startDrag(e);
+            }, { passive: true });
+            fab.addEventListener('touchend', cancelLongPress);
+
+            // Restore saved position
+            const savedPos = localStorage.getItem('fabPosition');
+            if (savedPos) {
+                const pos = JSON.parse(savedPos);
+                if (pos.left) fab.style.left = pos.left;
+                if (pos.top) fab.style.top = pos.top;
+                fab.style.right = 'auto';
+            }
+        }
+
+        function toggleNavPanel() { document.getElementById("navPanel").classList.toggle("open"); }
+        function closeNavPanel() { document.getElementById("navPanel").classList.remove("open"); }
+
+        function startTyping() {
+            const el = document.getElementById("nameText");
+            const text = "MUHAMMAD RIZKY U.";
+            let i = 0;
+            const type = () => {
+                if (i < text.length) { el.innerHTML += text.charAt(i); i++; setTimeout(type, 70); }
+                else { el.innerHTML += '<span class="animate-pulse text-[#1f4a3a] dark:text-[#c5a46e]">|</span>'; }
+            };
+            type();
+        }
+
+        function toggleTheme() {
+            const isDark = document.body.classList.toggle("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                document.body.classList.add("dark");
+            } else {
+                document.body.classList.remove("dark");
+            }
+
+            // Auto sync kalau user ganti mode HP (kecuali udah manual pilih)
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+                if (!localStorage.getItem("theme")) {
+                    if (e.matches) {
+                        document.body.classList.add("dark");
+                    } else {
+                        document.body.classList.remove("dark");
+                    }
+                }
+            });
+        }
+
+        // Animated Counters
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                const target = +counter.dataset.target;
+                let current = 0;
+                const inc = target / 50;
+                const timer = setInterval(() => {
+                    current += inc;
+                    if (current >= target) { counter.innerText = target + (target === 25 ? '+' : ''); clearInterval(timer); }
+                    else counter.innerText = Math.floor(current);
+                }, 35);
+            });
+        }
+
+        // Leaf Particles
+        function createLeafParticles() {
+            const canvas = document.getElementById('leafCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            const leaves = [];
+            for (let i = 0; i < 12; i++) {
+                leaves.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * -canvas.height,
+                    size: Math.random() * 18 + 10,
+                    speed: Math.random() * 1.2 + 0.6,
+                    angle: Math.random() * 360
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#3a6b52';
+                ctx.font = 'bold 16px sans-serif';
+
+                leaves.forEach(leaf => {
+                    ctx.save();
+                    ctx.translate(leaf.x, leaf.y);
+                    ctx.rotate(leaf.angle * Math.PI / 180);
+                    ctx.fillText('🍃', 0, 0);
+                    ctx.restore();
+
+                    leaf.y += leaf.speed;
+                    leaf.angle += 0.8;
+                    if (leaf.y > canvas.height) {
+                        leaf.y = -20;
+                        leaf.x = Math.random() * canvas.width;
+                    }
+                });
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        // Live Time
+        function updateLiveTime() {
+            const el = document.getElementById('liveTime');
+            setInterval(() => {
+                const now = new Date();
+                el.innerText = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+            }, 1000);
+        }
+
+        // Skill Modal
+        function showSkillModal(title, level, desc) {
+            document.getElementById("skillModalTitle").innerText = title;
+            document.getElementById("skillModalLevel").innerHTML = `
+                <div class="flex items-center gap-x-3">
+                    <span class="font-bold text-sm">LEVEL</span>
+                    <div class="flex-1 h-3 bg-[#d4d4c8] dark:bg-[#1f4a3a] rounded-full overflow-hidden">
+                        <div class="h-3 bg-[#1f4a3a] dark:bg-[#c5a46e] rounded-full" style="width:${level}%"></div>
+                    </div>
+                    <span class="font-black text-xl text-[#1f4a3a] dark:text-[#c5a46e]">${level}%</span>
+                </div>`;
+            document.getElementById("skillModalDesc").innerText = desc;
+            document.getElementById("skillModal").classList.remove("hidden");
+            document.getElementById("skillModal").classList.add("flex");
+        }
+        function closeSkillModal() {
+            const m = document.getElementById("skillModal");
+            m.classList.remove("flex"); m.classList.add("hidden");
+        }
+
+        function showInterestModal(title, desc) {
+            const m = document.createElement("div");
+            m.className = "fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-5";
+            m.innerHTML = `
+                <div class="glass w-full max-w-[380px] rounded-3xl p-7">
+                    <div class="font-black text-3xl mb-4">${title}</div>
+                    <div class="text-[#3a4a3a] dark:text-[#d4d4c8]">${desc}</div>
+                    <button onclick="this.closest('.fixed').remove()" class="mt-6 w-full py-3 forest-gradient text-white font-bold rounded-3xl">NICE!</button>
+                </div>`;
+            document.body.appendChild(m);
+        }
+
+        // Projects Data + Render
+        const projectsData = [
+            { id: 0, title: "DENPASAR", category: "VIDEO", year: "2026", desc: "Short film advanture", shoot on: "Poco X7 Pro" },
+            { id: 1, title: "LLorenzio Brand Visuals", category: "BRAND", year: "2025", desc: "Brand Cloothing simpel", tools: "Adobe Photoshop" },
+            { id: 2, title: "Agenda Touring", category: "Touring", year: "Oktober 2025", desc: "Kawasan Tengger", shoot on: "Poco X7 Pro" }
+        ];
+
+        function renderProjects(filtered = projectsData) {
+            const container = document.getElementById('projectsContainer');
+            container.innerHTML = '';
+            filtered.forEach(p => {
+                const div = document.createElement('div');
+                div.className = `project-card glass border border-[#8b5e3c]/20 rounded-3xl overflow-hidden cursor-pointer project-item`;
+                div.dataset.category = p.category;
+                div.innerHTML = `
+                    <div class="h-44 bg-zinc-900 relative">
+                        <img src="https://picsum.photos/id/${p.id === 0 ? '1016' : p.id === 1 ? '1005' : '251'}/600/400" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-black/70 text-white text-xs font-bold rounded-full">${p.category}</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="font-black text-xl">${p.title}</div>
+                        <div class="text-xs text-[#8b5e3c]">${p.year}</div>
+                    </div>`;
+                div.onclick = () => showProjectDetail(p.id);
+                container.appendChild(div);
+            });
+        }
+
+        function filterProjects(cat) {
+            if (cat) currentFilter = cat;
+            const search = document.getElementById('projectSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.project-item');
+            
+            items.forEach(item => {
+                const matchesCat = currentFilter === 'all' || item.dataset.category === currentFilter;
+                const matchesSearch = item.textContent.toLowerCase().includes(search);
+                item.style.display = (matchesCat && matchesSearch) ? '' : 'none';
+            });
+        }
+
+        function showProjectDetail(id) {
+            const p = projectsData.find(x => x.id === id);
+            const m = document.createElement("div");
+            m.className = "fixed inset-0 bg-black/80 z-[9999] flex items-end";
+            m.innerHTML = `
+                <div class="w-full max-w-[460px] mx-auto bg-[#f4f1e9] dark:bg-[#0d2818] rounded-t-[3rem] p-7">
+                    <div class="flex justify-between mb-4">
+                        <div><div class="font-black text-3xl">${p.title}</div><div class="text-xs text-[#8b5e3c]">${p.category} • ${p.year}</div></div>
+                        <button onclick="this.closest('.fixed').remove()"><i data-lucide="x"></i></button>
+                    </div>
+                    <div class="mb-5 text-[#3a4a3a] dark:text-[#d4d4c8]">${p.desc}</div>
+                    <div class="mb-6"><div class="text-xs text-[#8b5e3c]">TOOLS</div><div class="font-medium">${p.tools}</div></div>
+                    <div class="flex gap-3">
+                        <button onclick="watchDemo(${id}, this)" class="flex-1 py-3.5 forest-gradient text-white font-bold rounded-3xl">LIHAT DEMO</button>
+                        <button onclick="this.closest('.fixed').remove()" class="flex-1 py-3.5 border rounded-3xl">TUTUP</button>
+                    </div>
+                </div>`;
+            document.body.appendChild(m);
+            lucide.createIcons();
+        }
+
+        function watchDemo(id, btn) {
+            btn.closest('.fixed').remove();
+            const demo = document.createElement("div");
+            demo.className = "fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-5";
+            demo.innerHTML = `
+                <div class="max-w-[420px] w-full text-center text-white">
+                    <i data-lucide="play" class="w-16 h-16 mx-auto mb-4 opacity-70"></i>
+                    <div class="font-bold mb-2">DEMO REEL PROJECT #${id + 1}</div>
+                    <p class="text-sm opacity-70 mb-6">Video full ada di YouTube / Drive aku. Untuk presentasi, bayangin cinematic abis 🔥</p>
+                    <button onclick="this.closest('.fixed').remove()" class="px-8 py-3 bg-white text-black font-bold rounded-2xl">OK MENGERTI</button>
+                </div>`;
+            document.body.appendChild(demo);
+        }
+
+        function showAllProjectsModal() {
+            const m = document.createElement("div");
+            m.className = "fixed inset-0 bg-black/80 z-[999] flex items-end";
+            m.innerHTML = `
+                <div class="w-full max-w-[460px] mx-auto bg-[#f4f1e9] dark:bg-[#0d2818] rounded-t-[3rem] p-6">
+                    <div class="flex justify-between mb-4"><div class="font-black text-2xl">Semua Project</div><button onclick="this.closest('.fixed').remove()"><i data-lucide="x"></i></button></div>
+                    <div class="space-y-3 text-sm">
+                        ${projectsData.map(p => `<div class="glass p-4 rounded-2xl">${p.title} <span class="text-xs text-[#8b5e3c]">(${p.category})</span></div>`).join('')}
+                    </div>
+                </div>`;
+            document.body.appendChild(m);
+            lucide.createIcons();
+        }
+
+        // Achievement System
+        function unlockAchievement(element, id) {
+            if (element.classList.contains('unlocked')) return;
+            element.classList.remove('locked');
+            element.classList.add('unlocked');
+            showToast('Achievement Unlocked! +100 XP 🌲');
+            
+            if (typeof confetti !== 'undefined') {
+                confetti({ particleCount: 80, spread: 60, origin: { y: 0.7 } });
+            }
+        }
+
+        // Skill Chart
+        function showSkillChart() {
+            const m = document.createElement("div");
+            m.className = "fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-5";
+            m.innerHTML = `
+                <div class="glass w-full max-w-[420px] rounded-3xl p-6">
+                    <div class="flex justify-between mb-4"><div class="font-black">Skill Overview</div><button onclick="this.closest('.fixed').remove()"><i data-lucide="x"></i></button></div>
+                    <canvas id="skillChartCanvas" width="360" height="220"></canvas>
+                </div>`;
+            document.body.appendChild(m);
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                const ctx = document.getElementById('skillChartCanvas');
+                if (chartInstance) chartInstance.destroy();
+                chartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['MS Office', 'Video Editing', 'Troubleshooting', 'Data Entry'],
+                        datasets: [{
+                            label: 'Level %',
+                            data: [92, 87, 83, 96],
+                            backgroundColor: ['#1f4a3a', '#3a6b52', '#8b5e3c', '#c5a46e']
+                        }]
+                    },
+                    options: { responsive: true, plugins: { legend: { display: false } } }
+                });
+            }, 300);
+        }
+
+        // Touring Calculator
+        function calculateTourCost() {
+            const dest = document.getElementById('plannerDest').value;
+            const people = parseInt(document.getElementById('plannerPeople').value) || 1;
+            let base = dest === 'Bali' ? 850000 : 420000;
+            let total = base * people;
+            
+            const res = document.getElementById('tourResult');
+            res.innerHTML = `<div class="p-3 bg-white/70 dark:bg-[#1f4a3a] rounded-2xl">Estimasi: <span class="font-black">Rp ${total.toLocaleString('id-ID')}</span><br><span class="text-xs">untuk ${people} orang • ${dest}</span></div>`;
+            res.classList.remove('hidden');
+        }
+
+        // Map Modal
+        function openMapModal(dest) {
+            const data = {
+                Bali: { route: ["Jombang","Probolinggo","Situbondo","Banyuwangi","Jembrana","Denpasar"], dist: "±420 km", time: "8–10 jam" },
+                Bromo: { route: ["Jombang","Mojokerto","Purwodadi","Tumpang","Pasir Berbisik","Sunrise Point"], dist: "±180 km", time: "5–7 jam" }
+            }[dest];
+            
+            const m = document.createElement("div");
+            m.className = "fixed inset-0 bg-black/70 z-[9999] flex items-end";
+            m.innerHTML = `
+                <div class="w-full max-w-[460px] mx-auto bg-[#f4f1e9] dark:bg-[#0d2818] rounded-t-[3rem] p-6">
+                    <div class="flex justify-between items-center mb-5">
+                        <div class="font-black text-3xl">${dest}</div>
+                        <button onclick="this.closest('.fixed').remove()" class="w-9 h-9 flex items-center justify-center text-[#8b5e3c] hover:text-red-500">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                    <div class="text-xs text-[#8b5e3c] mb-2">${data.dist} • ${data.time}</div>
+                    <div class="space-y-2 mb-6">${data.route.map((loc,i) => `<div class="flex gap-3 items-center"><div class="w-8 h-8 rounded-xl bg-[#1f4a3a] text-white flex items-center justify-center text-xs">${i+1}</div><div>${loc}</div></div>`).join('')}</div>
+                    <a href="https://www.google.com/maps/dir/${data.route.join('/')}" target="_blank" class="block text-center py-3.5 forest-gradient text-white font-bold rounded-3xl">BUKA DI GOOGLE MAPS</a>
+                </div>`;
+            document.body.appendChild(m);
+            lucide.createIcons();
+        }
+
+        // Hire + Confetti
+        function openHireModal() { document.getElementById("hireModal").classList.remove("hidden"); document.getElementById("hireModal").classList.add("flex"); }
+        function closeHireModal() { document.getElementById("hireModal").classList.remove("flex"); document.getElementById("hireModal").classList.add("hidden"); }
+
+        function submitHire() {
+            const name = document.getElementById("hireName").value || "Bestie";
+            if (!document.getElementById("hireEmail").value) { showToast("Email wajib diisi!"); return; }
+            
+            closeHireModal();
+            if (typeof confetti !== 'undefined') {
+                confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+                setTimeout(() => confetti({ particleCount: 150, angle: 60, spread: 70, origin: { x: 0.1 } }), 250);
+            }
+            showToast(`Thanks ${name}! for Yapping`);
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            t.innerHTML = msg;
+            t.classList.remove("hidden"); t.classList.add("flex");
+            setTimeout(() => { t.classList.remove("flex"); t.classList.add("hidden"); }, 2800);
+        }
+
+        // PDF CV
+        function downloadCV() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.setFontSize(20); doc.setTextColor(31,74,58);
+            doc.text("MUHAMMAD RIZKY UBAIDILLAH", 20, 25);
+            doc.setFontSize(11); doc.setTextColor(139,94,60);
+            doc.text("Portofolio", 20, 32);
+            doc.text("Jombang, Jawa Timur", 20, 38);
+            doc.line(20, 43, 190, 43);
+            doc.setFontSize(13); doc.setTextColor(31,74,58); doc.text("CORE STRENGTHS", 20, 52);
+            doc.setFontSize(10); doc.setTextColor(50,50,50);
+            doc.text("• Video Editing (Premiere Pro, CapCut, DaVinci) 87%", 20, 60);
+            doc.text("• MS Office Expert • Troubleshooting • Data Entry 70%", 20, 66);
+            doc.setFontSize(13); doc.setTextColor(31,74,58); doc.text("EXPERIENCE & PROJECTS", 20, 78);
+            doc.setFontSize(10); doc.setTextColor(50,50,50);
+            doc.text("PT. Layo Seng Fong (2024–Now) • CV. Mega Lestari Plasindo", 20, 86);
+            doc.text("Bromo Sunrise Cinematic • LLorenzio Brand • Workshop Jombang", 20, 92);
+            doc.setFontSize(11); doc.setTextColor(100,100,100);
+            doc.text('"More than just visuals — I tell stories."', 20, 108);
+            doc.text("Generated • Japanese Forest Ultimate Edition", 20, 114);
+            doc.save("Rizky_Ubaidillah_ULTIMATE_CV.pdf");
+            showToast("PDF CV berhasil di-download!");
+        }
+
+        // Keyboard Help
+        function showKeyboardHelp() {
+            const m = document.createElement("div");
+            m.className = "fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-5";
+            m.innerHTML = `
+                <div class="glass max-w-[380px] w-full rounded-3xl p-7">
+                    <div class="font-black text-2xl mb-4">Keyboard Shortcuts</div>
+                    <div class="space-y-2 text-sm">
+                        <div><b>R</b> → Random slide</div>
+                        <div><b>F</b> → Focus search project</div>
+                        <div><b>?</b> → Buka help ini</div>
+                        <div><b>ESC</b> → Tutup modal</div>
+                    </div>
+                    <button onclick="this.closest('.fixed').remove()" class="mt-6 w-full py-3 forest-gradient text-white rounded-3xl">COOL!</button>
+                </div>`;
+            document.body.appendChild(m);
+        }
+
+        // Global Keyboard
+        function initKeyboard() {
+            document.addEventListener("keydown", (e) => {
+                if (e.key.toLowerCase() === "r") {
+                    const rand = Math.floor(Math.random() * 5);
+                    mainSwiper.slideTo(rand);
+                }
+                if (e.key.toLowerCase() === "f") {
+                    const search = document.getElementById("projectSearch");
+                    if (search) { search.focus(); e.preventDefault(); }
+                }
+                if (e.key === "?") {
+                    showKeyboardHelp();
+                    e.preventDefault();
+                }
+                if (e.key === "Escape") {
+                    document.querySelectorAll(".fixed").forEach(el => el.remove());
+                }
+            });
+        }
+
+        // Vanilla Tilt
+        function initTilt() {
+            setTimeout(() => {
+                document.querySelectorAll('.tilt-card').forEach(card => {
+                    VanillaTilt.init(card, { max: 12, speed: 400, glare: true, "max-glare": 0.2 });
+                });
+            }, 800);
+        }
+
+        function init() {
+            initSwiper();
+            loadTheme();
+            startTyping();
+            lucide.createIcons();
+            createLeafParticles();
+            updateLiveTime();
+            animateCounters();
+            renderProjects();
+            initTilt();
+            initKeyboard();
+            makeFloatingButtonDraggable();
+
+            // Set initial filter active
+            setTimeout(() => {
+                const firstBtn = document.querySelector('.filter-btn');
+                if (firstBtn) firstBtn.classList.add('active');
+            }, 500);
+
+            // Easter egg
+            console.log("%c[ULTIMATE GG] Japanese Forest Portfolio loaded with MAX features 🔥", "color:#1f4a3a");
+        }
+
+        window.onload = init;
+    </script>
+    <!-- Bottom Navigation Bar (Figma Style Prototype) -->
+<div class="fixed bottom-0 left-0 right-0 z-[50] max-w-[460px] mx-auto bg-[#f4f1e9] dark:bg-[#0d2818] border-t border-[#8b5e3c]/20">
+    <div class="flex items-center justify-around px-1 py-2">
+        <div onclick="goToSlide(0)" class="nav-bottom flex flex-col items-center px-3 py-1 active:scale-95">
+            <i data-lucide="user" class="w-5 h-5 mb-0.5"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </div>
+        <div onclick="goToSlide(1)" class="nav-bottom flex flex-col items-center px-3 py-1 active:scale-95">
+            <i data-lucide="code" class="w-5 h-5 mb-0.5"></i>
+            <span class="text-[10px] font-medium">Skills</span>
+        </div>
+        <div onclick="goToSlide(2)" class="nav-bottom flex flex-col items-center px-3 py-1 active:scale-95">
+            <i data-lucide="briefcase" class="w-5 h-5 mb-0.5"></i>
+            <span class="text-[10px] font-medium">Projects</span>
+        </div>
+        <div onclick="goToSlide(3)" class="nav-bottom flex flex-col items-center px-3 py-1 active:scale-95">
+            <i data-lucide="shopping-bag" class="w-5 h-5 mb-0.5"></i>
+            <span class="text-[10px] font-medium">Store</span>
+        </div>
+        <div onclick="goToSlide(4)" class="nav-bottom flex flex-col items-center px-3 py-1 active:scale-95">
+            <i data-lucide="map" class="w-5 h-5 mb-0.5"></i>
+            <span class="text-[10px] font-medium">Touring</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
